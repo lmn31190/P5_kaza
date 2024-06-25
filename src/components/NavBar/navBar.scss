@@ -1,0 +1,23 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+
+    img{
+        width: 210px;
+    }
+
+    ul{
+       display: flex;
+       gap: 30px;
+
+       li{
+        list-style: none;
+
+        &:hover {
+            border-bottom: .5px solid black;
+        }
+       }
+    }
+}
