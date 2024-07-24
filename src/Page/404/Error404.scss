@@ -1,0 +1,45 @@
+@import "../../color.module.scss";
+
+.error {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .error404,
+  .errorMsg,
+  .backHome {
+    text-align: center;
+    color: $red-color;
+  }
+  .error404 {
+    font-size: 288px;
+    font-weight: 700;
+    margin: 0;
+    @media (max-width: 768px) {
+      font-size: 26vw;
+    }
+  }
+  .errorMsg {
+    margin-top: 20px;
+    font-size: 36px;
+    @media (max-width: 768px) {
+      font-size: 24px;
+      padding: 10px;
+    }
+    @media (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+
+  .linkHome {
+    text-decoration: none;
+    .backHome {
+      text-decoration: underline;
+      color: #000;
+      margin-top: 130px;
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+  }
+}

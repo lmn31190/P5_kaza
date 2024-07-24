@@ -1,0 +1,112 @@
+@import "../../color.module.scss";
+
+.singleLog {
+  width: 90%;
+  margin: 45px auto;
+  h1,
+  p {
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .logContainer {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: 769px) {
+      flex-direction: column;
+    }
+    
+    .logLeft {
+      .logTitle {
+        line-height: 2.5rem;
+        h1 {
+          font-weight: 500;
+          color: $red-color;
+          
+          @media (max-width: 769px) {
+           font-size: 18px;
+          }
+        }
+        p {
+          font-size: 18px;
+
+          @media (max-width: 769px) {
+            font-size: 14px;
+           }
+        }
+      }
+
+      ul.tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 20px 0px;
+        font-weight: 700;
+        margin: 0;
+
+        li {
+          color: #fff;
+          background-color: $red-color;
+          border-radius: 10px;
+          padding: 7px 35px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .logRight {
+      display: flex;
+      flex-direction: column;
+      width: 33%;
+      gap: 25px;
+
+      @media (max-width: 769px) {
+      width: unset;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+      margin-bottom: 20px;
+      }
+      .host {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        p {
+          color: $red-color;
+          font-size: 18px;
+          white-space: pre-wrap;
+          text-align: end;
+
+          @media (max-width: 769px) {
+            font-size: 16px;
+           }
+        }
+        img {
+          border-radius: 50%;
+          width: 64px;
+          height: 64px;
+        }
+      }
+    }
+  }
+
+  .accordeonContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    
+    @media (max-width: 769px) {
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    ul{
+      padding: 20px 0;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import "../../color.module.scss";
+
+.rating {
+    text-align: end;
+    .star {
+      margin-left: 0.5em;
+      font-size: 24px;
+      @media (max-width: 950px) {
+        font-size: 20px;
+      }
+      @media (max-width: 768px) {
+        font-size: 17px;
+      }
+      &.disable {
+        fill: #E3E3E3;
+      }
+      &.enable {
+        fill: $red-color;
+      }
+      svg {
+        font-size: inherit;
+      }
+    }
+  }

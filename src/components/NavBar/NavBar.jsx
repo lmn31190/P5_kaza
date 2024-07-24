@@ -1,17 +1,22 @@
-import React from 'react'
-import logo from "./logo.svg"
-import './navBar.scss';
+import logo from "../../assets/images/logo.svg";
+import "./navBar.scss";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
+
   return (
     <nav className="nav">
-        <img src={logo} alt="logo Kasa" />
-        <ul>
-          <li>Accueil</li>
-          <li>A propos</li>
-        </ul>
+      <Link to="/"><img src={logo} alt="logo Kasa" /></Link>
+      <ul>
+        <NavLink className={({ isActive }) => (isActive  ? "liNavActive" : "liNav")} to="/">
+          Accueil
+        </NavLink>
+        <NavLink className={({ isActive }) => (isActive  ? "liNavActive" : "liNav")} to="/about">
+          À propos
+        </NavLink>
+      </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

@@ -1,35 +1,46 @@
-import React, { useEffect, useState } from 'react'
-import './home.scss';
-import axios from 'axios';
-import logements from '../../logement.json'
+import "./home.scss";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Banner from "../../components/banner/Banner";
+import homeImg from '../../assets/images/banner.webp'
 
 const Home = () => {
+  const [data, setData] = useState([]);
 
-  const [data, setData] = useState('');
+  useEffect(() => {
+     const getData = async () => {
+        const response = await fetch("../logement.json");
+        const data = await response.json();
+        setData(data); 
+    }
+    getData();
+  }, []);
 
-  return (
-    <div className='home'>
-       <div className="banner">
-        <h1>Chez vous, partout et ailleurs</h1>
-       </div>
+       
+    
+    return (
+    <div className="home">
+      <Banner img={homeImg}/>
 
-       <div className="gallery">
+      <div className="logementList">
         <div className="container">
           <div className="wrapper">
-            {
-              logements.slice(0,6).map(logement => {
-                return(
-                  <div className="card">
-                    <h3>{logement.title}</h3>
-                  </div>
-                )
-              })
-            }
+          {data &&
+            data.length > 0 &&
+            data.map((logement) => (
+              <Link className="card" key={`/logement/${logement.id}`} to={`/logement/${logement.id}`}>
+                <img src={logement.cover} alt="" />
+                <div className="opacityCard"></div>
+                <h3>{logement.title}</h3>
+              </Link>
+            ))}
+
           </div>
         </div>
-       </div>
-    </div>
-  )
-}
+      </div>
 
-export default Home
+    </div>
+  );
+};
+
+export default Home;
