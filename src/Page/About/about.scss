@@ -6,15 +6,25 @@
   flex-direction: column;
   align-items: center;
 
+  
   img {
     opacity: 0.8;
   }
-
-  .accordion {
-    margin-bottom: 20px;
-    p {
-      margin: 0;
-      font-weight: 500;
+  .accordionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 769px) {
+      height: 38vh;
+    }
+    
+    .accordion {
+      margin-bottom: 20px;
+      p {
+        margin: 0;
+        font-weight: 500;
+      }
     }
   }
 }

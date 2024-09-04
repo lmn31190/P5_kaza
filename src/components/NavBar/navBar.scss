@@ -8,6 +8,11 @@ nav {
 
   img {
     width: 210px;
+
+    @media (max-width: 769px) {
+      width: 155px;
+      height: 48.88px;
+    }
   }
 
   ul {

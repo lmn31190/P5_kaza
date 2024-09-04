@@ -20,7 +20,7 @@ const Home = () => {
     
     return (
     <div className="home">
-      <Banner img={homeImg}/>
+      <Banner img={homeImg} homeBanner={"Chez vous, partout et ailleurs"}/>
 
       <div className="logementList">
         <div className="container">

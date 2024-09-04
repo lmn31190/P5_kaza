@@ -14,9 +14,15 @@
     margin-top: 2.5rem;
 
     .container {
-      background: #f6f6f6;
       border-radius: 25px;
       padding: 40px;
+      background: #f6f6f6;
+
+      
+      @media (max-width: 769px) {
+        background: none;
+      }
+
 
       .wrapper {
         display: grid;

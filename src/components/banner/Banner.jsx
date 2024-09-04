@@ -1,10 +1,12 @@
 import "./banner.scss";
 
-const Banner = ({img}) => {
+const Banner = ({img, aboutBanner, homeBanner}) => {
   return (
     <div className="banner">
         <img src={img} alt="" />
-      <h1>Chez vous, partout et ailleurs</h1>
+        
+      <h1>{aboutBanner || homeBanner}</h1>
+      
     </div>
   );
 };
