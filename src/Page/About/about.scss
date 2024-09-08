@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     @media (max-width: 769px) {
-      height: 38vh;
+      min-height: 38vh;
     }
     
     .accordion {
